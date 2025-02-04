@@ -39,7 +39,7 @@ public class Statut {
         return nomStatut;
     }
 
-    public void setNomStatut(String statut) {
+    public void setNomStatut(String nomStatut) {
         this.nomStatut = nomStatut;
     }
 
