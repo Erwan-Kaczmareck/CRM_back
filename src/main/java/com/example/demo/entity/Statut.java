@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -14,6 +15,7 @@ public class Statut {
     private String nomStatut;
 
     @OneToMany(mappedBy = "statut", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<Prospect> prospects;
 
 

@@ -24,7 +24,6 @@ public class Prospect {
     private String specialite;
     private String ville;
     private Short anneeRecrutement;
-    private String prospectcol;
     private String entreProchaineAnnee;
 
     private String commentaire;
@@ -153,14 +152,6 @@ public class Prospect {
 
     public void setAnneeRecrutement(Short anneeRecrutement) {
         this.anneeRecrutement = anneeRecrutement;
-    }
-
-    public String getProspectcol() {
-        return prospectcol;
-    }
-
-    public void setProspectcol(String prospectcol) {
-        this.prospectcol = prospectcol;
     }
 
     public String getEntreProchaineAnnee() {
