@@ -8,6 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/statuts")
+@CrossOrigin(origins = "*")
 public class StatutController {
 
     private final StatutService statutService;

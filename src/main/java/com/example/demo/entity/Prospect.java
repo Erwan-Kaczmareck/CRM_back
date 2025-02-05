@@ -27,6 +27,7 @@ public class Prospect {
     private String entreProchaineAnnee;
 
     private String commentaire;
+    private String etablissement;
 
     @ManyToOne
     @JoinColumn(name = "Statut_id_Statut") // Clé étrangère vers Statut
@@ -50,6 +51,13 @@ public class Prospect {
         this.type = type;
     }
 
+    public String getEtablissement() {
+        return etablissement;
+    }
+
+    public void setEtablissement(String etablissement) {
+        this.etablissement = etablissement;
+    }
     public String getOrigineLead() {
         return origineLead;
     }

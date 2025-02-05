@@ -16,6 +16,7 @@ import java.util.Map;
 import java.util.List;
 @RestController
 @RequestMapping("/api/prospects")
+@CrossOrigin(origins = "*")
 public class ProspectController {
     private final ProspectService prospectService;
 
@@ -82,6 +83,11 @@ public class ProspectController {
             if (prospect.getVille() != null && prospect.getVille().trim().isEmpty()) {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("La ville doit être une chaîne de caractères valide.");
             }
+
+            if (prospect.getEtablissement() != null && prospect.getEtablissement().trim().isEmpty()) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("L'établissement doit être une chaîne de caractères valide.");
+            }
+
             if (prospect.getNiveauActuel() != null && prospect.getNiveauActuel().trim().isEmpty()) {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Le niveau actuel doit être une chaîne de caractères valide.");
             }
@@ -216,6 +222,9 @@ public class ProspectController {
         if (updatedProspect.getSpecialite() != null && !updatedProspect.getSpecialite().isEmpty() && updatedProspect.getSpecialite() == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("La spécialité doit être une chaîne de caractères.");
         }
+        if (updatedProspect.getEtablissement() != null && updatedProspect.getEtablissement().trim().isEmpty()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("L'établissement doit être une chaîne de caractères valide.");
+        }
 
         // Vérification du type de 'Entre prochaine année' (doit être une chaîne de caractères)
         if (updatedProspect.getEntreProchaineAnnee() != null && !updatedProspect.getEntreProchaineAnnee().isEmpty() && updatedProspect.getEntreProchaineAnnee() == null) {
@@ -231,6 +240,8 @@ public class ProspectController {
         if (updatedProspect.getStatut() != null && updatedProspect.getStatut().getIdStatut() == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Le statut doit être valide.");
         }
+
+
 
         // Appel au service pour mettre à jour le prospect
         Prospect updated = prospectService.updateProspect(id, updatedProspect);

@@ -52,6 +52,7 @@ public class ProspectService {
             prospect.setPrenom(prospectDetails.getPrenom());
             prospect.setTelephone(prospectDetails.getTelephone());
             prospect.setMail(prospectDetails.getMail());
+            prospect.setEtablissement(prospectDetails.getEtablissement());
             prospect.setNiveauActuel(prospectDetails.getNiveauActuel());
             prospect.setDiplomePrepare(prospectDetails.getDiplomePrepare());
             prospect.setSpecialite(prospectDetails.getSpecialite());
